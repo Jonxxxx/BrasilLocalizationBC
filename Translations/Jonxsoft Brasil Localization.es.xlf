@@ -1,0 +1,609 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="es" original="Jonxsoft Brasil Localization">
+    <body>
+      <group id="body">
+        <trans-unit id="Page 705665075 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax jurisdiction</source>
+          <target state="needs-review-translation">Jurisdicción fiscal</target>
+          <note from="Developer" annotates="general" priority="2">ESP = Jurisdicciones de impuestos</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRTaxJurisdictions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 705665075 - Control 3928393419 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Adjust for payment discount</source>
+          <target state="needs-review-translation">Ajustar por descuento de pago</target>
+          <note from="Developer" annotates="general" priority="2">ESP = Ajuste por descuento en pago</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRTaxJurisdictions - Control Adjust for Payment Discount - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 705665075 - Control 2378381959 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Calculate tax on tax</source>
+          <target state="needs-review-translation">Calcular impuestos sobre impuestos</target>
+          <note from="Developer" annotates="general" priority="2">ESP = Calcula impuesto in impuesto</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRTaxJurisdictions - Control Calculate Tax on Tax - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 705665075 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <target state="needs-review-translation">Código</target>
+          <note from="Developer" annotates="general" priority="2">ESP = Codigo</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRTaxJurisdictions - Control Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 705665075 - Control 1437370122 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default tax</source>
+          <target state="needs-review-translation">Impuesto por defecto</target>
+          <note from="Developer" annotates="general" priority="2">ESP = Impuesto por defecto</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRTaxJurisdictions - Control Default Sales and Use Tax - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 705665075 - Control 1437370122 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default sales and use tax</source>
+          <target state="needs-review-translation">Ventas por defecto y impuesto sobre el uso</target>
+          <note from="Developer" annotates="general" priority="2">Impuesto de ventas y uso por defecto</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRTaxJurisdictions - Control Default Sales and Use Tax - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 705665075 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target state="needs-review-translation">Descripción</target>
+          <note from="Developer" annotates="general" priority="2">ESP = Descripcion</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRTaxJurisdictions - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 705665075 - Control 196877143 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax Identification</source>
+          <target state="needs-review-translation">Identificación fiscal</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRTaxJurisdictions - Control JXBRTaxIdentification - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 705665075 - Control 1161097543 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Report to jurisdiction</source>
+          <target state="needs-review-translation">Informar a la jurisdicción</target>
+          <note from="Developer" annotates="general" priority="2">ESP = Reporte para jurisdiccion</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRTaxJurisdictions - Control Report-to Jurisdiction - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 705665075 - Control 2844613725 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reverse charge (purchases)</source>
+          <target state="needs-review-translation">Carga inversa (compras)</target>
+          <note from="Developer" annotates="general" priority="2">ESP = Cargo inverso (compras)</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRTaxJurisdictions - Control Reverse Charge (Purchases) - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 705665075 - Control 2634445687 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax Account (purchases)</source>
+          <target state="needs-review-translation">Cuenta fiscal (compras)</target>
+          <note from="Developer" annotates="general" priority="2">ESP = Cuenta de impeustos (compras)</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRTaxJurisdictions - Control Tax Account (Purchases) - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 705665075 - Control 947045239 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax account (sales)</source>
+          <target state="needs-review-translation">Cuenta fiscal (ventas)</target>
+          <note from="Developer" annotates="general" priority="2">ESP = Cuenta de impuesto (ventas)</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRTaxJurisdictions - Control Tax Account (Sales) - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 705665075 - Control 3308356395 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unrealized reverse charge (purchases)</source>
+          <target state="needs-review-translation">Cargo inverso no realizado (compras)</target>
+          <note from="Developer" annotates="general" priority="2">ESP = Cargo inverso no realizado (compras)</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRTaxJurisdictions - Control Unreal. Rev. Charge (Purch.) - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 705665075 - Control 1664857440 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unrealized tax account (purchases)</source>
+          <target state="needs-review-translation">Cuenta fiscal no realizada (compras)</target>
+          <note from="Developer" annotates="general" priority="2">ESP = Cuenta de impuestos no realizados (compras)</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRTaxJurisdictions - Control Unreal. Tax Acc. (Purchases) - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 705665075 - Control 918807712 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unrealized tax account (sales)</source>
+          <target state="needs-review-translation">Cuenta fiscal no realizada (ventas)</target>
+          <note from="Developer" annotates="general" priority="2">ESP = Cuenta de impuesto no realizada (ventas)</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRTaxJurisdictions - Control Unreal. Tax Acc. (Sales) - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 705665075 - Control 2743123148 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target state="needs-review-translation">Descripción</target>
+          <note from="Developer" annotates="general" priority="2">ESP = Descripcion</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRTaxJurisdictions - Control Unrealized VAT Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 491968171 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Brasil</source>
+          <target state="needs-review-translation">Brasil</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Brasil"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRLocalization - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 2371943696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Electronic Doc. Setup</source>
+          <target state="needs-review-translation">Conf. Doc. Electronicos</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Config. doc. electronicos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRlectronicInvoice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 2897616014 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Additonal functions</source>
+          <target state="needs-review-translation">Funciones adicionales</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Funciones adicionales"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRAdditionalFunctions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 3811204653 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Document correction</source>
+          <target state="needs-review-translation">Corrección de documentos</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Corrector de documentos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRDocumentCorrection - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 3811204653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Document correction</source>
+          <target state="needs-review-translation">Corrección de documentos</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Corrector de documentos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRDocumentCorrection - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 2294963800 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Localization reports</source>
+          <target state="needs-review-translation">Informes de localización</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Reportes localización"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRLocalizationReports - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 2294963800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Localization reports</source>
+          <target state="needs-review-translation">Informes de localización</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Reportes localización"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRLocalizationReports - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 917370391 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Electronic Invoice</source>
+          <target state="needs-review-translation">Factura electrónica</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Factura electronica"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRFEParams - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 802403520 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Customer document types setup</source>
+          <target state="needs-review-translation">Configuración de Tipos documentos clientes</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Configuracion tipos de documento clientes"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRFECustDocumentTypes - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 802403520 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Customer document types</source>
+          <target state="needs-review-translation">Tipos documentos clientes</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Tipos de documento clientes"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRFECustDocumentTypes - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 3686435167 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Document types setup</source>
+          <target state="needs-review-translation">Configuración de tipos de documentos</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Configuracion tipos de documento"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRFEDocumentTypes - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 3686435167 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Document types</source>
+          <target state="needs-review-translation">Tipos de documentos</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Tipos de documento"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRFEDocumentTypes - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 4196652778 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Document vat types setup</source>
+          <target state="needs-review-translation">Configuración de Tipos documentos IVA</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Configuracion tipos de documento impuestos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRFEVATDocumentTypes - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 4196652778 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Document vat types</source>
+          <target state="needs-review-translation">Tipos de IVA de documento</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Tipos de documento impuestos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRFEVATDocumentTypes - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 1872112344 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Point of sale setup</source>
+          <target state="needs-review-translation">Configuración de punto de venta</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Configuracion de puntos de venta"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRPointOfSale - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 1872112344 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Point of sale</source>
+          <target state="needs-review-translation">Punto de venta</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Puntos de venta"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRPointOfSale - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 4108849166 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Document series setup</source>
+          <target state="needs-review-translation">Configuración de la serie de documentos</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Configuracion series de documentos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRSeriesFEConfiguration - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 4108849166 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Document series</source>
+          <target state="needs-review-translation">Serie de documentos</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Series de documentos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRSeriesFEConfiguration - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 859459518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Perceptions setup</source>
+          <target state="needs-review-translation">Configuración de percepciones</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Conf. percepcion"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRTaxesConfigurations - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 4267569341 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Fiscal types setup</source>
+          <target state="needs-review-translation">Configuración de tipos fiscales</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Configuracion de tipos fiscales"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRFiscalTypes - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 4267569341 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Fiscal type</source>
+          <target state="needs-review-translation">Tipo fiscal</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Tipo fiscal"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRFiscalTypes - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 2742534085 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Province setup</source>
+          <target state="needs-review-translation">Configuración de la provincia</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Configuracion de Provincias"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRProvinces - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 2742534085 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Province</source>
+          <target state="needs-review-translation">Provincia</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Provincia"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRProvinces - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 4191440141 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Tax area setup</source>
+          <target state="needs-review-translation">Configuración del área fiscal</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Configuracion de areas de impuestos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRTaxAreas - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 4191440141 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Tax area</source>
+          <target state="needs-review-translation">Área impositiva</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Areas de impuestos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRTaxAreas - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 3213882591 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Tax details setup</source>
+          <target state="needs-review-translation">Configuración de Detalle de impuestos</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Configuracion de detalles de impuestos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRTaxDetails - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 3213882591 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Tax details</source>
+          <target state="needs-review-translation">Detalle de impuestos</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Detalles de impuestos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRTaxDetails - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 1920261949 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Tax groups setup</source>
+          <target state="needs-review-translation">Configuración de grupos fiscales</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Configuracion de grupos de impuestos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRTaxGroups - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 1920261949 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Tax groups</source>
+          <target state="needs-review-translation">Grupos de impuestos</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Grupos de impuestos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRTaxGroups - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 705665075 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Tax jurisdictions setup</source>
+          <target state="needs-review-translation">Configuración de jurisdicciones fiscales</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Configuracion de jurisdicciones de impuestos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRTaxJurisdictions - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 705665075 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Tax jurisdictions</source>
+          <target state="needs-review-translation">Jurisdicciones fiscales</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Jurisdicciones de impuestos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRTaxJurisdictions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 2728652495 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Treasury</source>
+          <target state="needs-review-translation">Tesorería</target>
+          <note from="Developer" annotates="general" priority="2">ESP=Tesoreria"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRTreasury - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 3814823315 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Payment Journal (Vendors)</source>
+          <target state="needs-review-translation">Diario de pago (proveedores)</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Diario de pago (Proveedores)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRPaymentJournal - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 3814823315 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Payment Journal (Vendors)</source>
+          <target state="needs-review-translation">Diario de pago (proveedores)</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Diario de pago (Proveedores)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRPaymentJournal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 1880145485 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>History payment orders</source>
+          <target state="needs-review-translation">Historico Ordenes de Pago</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Historico ordenes de pago"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRPostedPaymOrders - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 1880145485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>History payment orders</source>
+          <target state="needs-review-translation">Historico Ordenes de Pago</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Historico ordenes de pago"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRPostedPaymOrders - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 2429267616 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>History receipts</source>
+          <target state="needs-review-translation">Historico de Recibos</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Historico de recibos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRPostedReceipts - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 2429267616 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>History receipts</source>
+          <target state="needs-review-translation">Historico de Recibos</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Historico de recibos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRPostedReceipts - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 2375754753 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Payment Journal (Customers)</source>
+          <target state="needs-review-translation">Diario de pago (clientes)</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Diario de pago (Clientes)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRReceiptJournal - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 2375754753 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Payment Journal (Customers)</source>
+          <target state="needs-review-translation">Diario de pago (clientes)</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Diario de pago (Clientes)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRReceiptJournal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 3940511643 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Third party check</source>
+          <target state="needs-review-translation">Cheque de terceros</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Cheques de terceros"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRThirdPartyCheck - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 3940511643 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Third party check</source>
+          <target state="needs-review-translation">Cheque de terceros</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Cheques de terceros"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRThirdPartyCheck - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 1097371710 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Treasury setup</source>
+          <target state="needs-review-translation">Configuración del Tesoreria</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Configuracion tesoreria"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRTreasurySetup - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 1097371710 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Treasury setup</source>
+          <target state="needs-review-translation">Configuración del Tesoreria</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Conf. tesoreria"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRTreasurySetup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 1624635807 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Withholdings setup</source>
+          <target state="needs-review-translation">Configuración de retenciones</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Conf. retenciones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRWithholdingConfiguratons - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 3153118542 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Withholding area list</source>
+          <target state="needs-review-translation">Lista de área de retención</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Lista de area de retencion"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRWithholdAreaList - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 3153118542 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Withholding area list</source>
+          <target state="needs-review-translation">Lista de área de retención</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Lista de area de retencion"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRWithholdAreaList - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 1438306486 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Withholding taxes setup</source>
+          <target state="needs-review-translation">Configuración de impuestos de retención</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Configuracion de impuesto retenciones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRWithholdTax - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 1438306486 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Withholding taxes</source>
+          <target state="needs-review-translation">Retención de impuestos</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Impuesto retenciones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRWithholdTax - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 4023730152 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Withholding Tax conditions setup</source>
+          <target state="needs-review-translation">Configuración de las condiciones impositivas</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Configuracion de condicion de impuesto retenciones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRWithholdTaxCond - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 4023730152 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Withholding Tax conditions</source>
+          <target state="needs-review-translation">Retención condiciones impositivas</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Condicion de impuesto retenciones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRWithholdTaxCond - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 1643555893 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Witholding detail setup</source>
+          <target state="needs-review-translation">Configuración de detalles de Witholding</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Configuracion detalle retencion"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRWithholdTaxDetail - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 1643555893 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Witholding detail</source>
+          <target state="needs-review-translation">Detalle de Retencion</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Detalle retencion"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRWithholdTaxDetail - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 2284860846 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Witholding scale setup</source>
+          <target state="needs-review-translation">Escala de Retencion</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Configuracion escala retencion"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRWithholdTaxScale - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1000464162 - Action 2284860846 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
+          <source>Witholding scale</source>
+          <target state="needs-review-translation">Escala de Retencion</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Escala retencion"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRWithholdTaxScale - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3486134806 - Control 196877143 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1355372846">
+          <source>Tax Identification</source>
+          <target state="needs-review-translation">Identificación fiscal</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRWithholdingTax - Control JXBRTaxIdentification - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2430388326 - Field 196877143 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 104539924">
+          <source>Tax Identification</source>
+          <target state="needs-review-translation">Identificación fiscal</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension JXBRTaxJurisdiction - Field JXBRTaxIdentification - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3486134806 - Field 196877143 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1355372846">
+          <source>Tax Identification</source>
+          <target state="needs-review-translation">Identificación fiscal</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension JXBRWithholdingTax - Field JXBRTaxIdentification - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="needs-translation"></target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue   - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 3615489821 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cide</source>
+          <target state="needs-review-translation">Cide</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue Cide - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 469176050 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>COFINS</source>
+          <target state="needs-review-translation">COFINS</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue COFINS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 1514100773 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>COFINS Dif.</source>
+          <target state="needs-review-translation">COFINS Dif.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue COFINS Dif. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 3705956877 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>COFINS Ret.</source>
+          <target state="needs-review-translation">COFINS Ret.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue COFINS Ret. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 2901265123 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CPR</source>
+          <target state="needs-review-translation">RCP</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue CPR - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 3195461763 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CSL Ret.</source>
+          <target state="needs-review-translation">CSL ret.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue CSL Ret. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 2047598092 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CSLL</source>
+          <target state="needs-review-translation">CSLL</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue CSLL - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 2490597816 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CSRF</source>
+          <target state="needs-review-translation">CSRF</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue CSRF - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 1409269278 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dif. Aliq. ICMS</source>
+          <target state="needs-review-translation">Diferencia Aliq. ICMS</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue Dif. Aliq. ICMS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 3320037592 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FUNTTEL</source>
+          <target state="needs-review-translation">Funttel</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue FUNTTEL - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 2389962664 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FUST</source>
+          <target state="needs-review-translation">FUST</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue FUST - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 278961904 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ICMS</source>
+          <target state="needs-review-translation">ICMS</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue ICMS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 2573416650 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ICMS Inter.</source>
+          <target state="needs-review-translation">ICMS inter.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue ICMS Inter. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 1728837420 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>II</source>
+          <target state="needs-review-translation">II</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue II - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 153246697 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>INSS</source>
+          <target state="needs-review-translation">INSS</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue INSS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 1416009118 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>INSS Ret.</source>
+          <target state="needs-review-translation">INSS ret.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue INSS Ret. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 1049935708 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>IPI</source>
+          <target state="needs-review-translation">IPI</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue IPI - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 4002469676 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>IRPF Ret.</source>
+          <target state="needs-review-translation">IRPF ret.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue IRPF Ret. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 4106059459 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>IRPJ</source>
+          <target state="needs-review-translation">IRPJ</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue IRPJ - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 2243299433 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>IRRF</source>
+          <target state="needs-review-translation">Irritar</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue IRRF - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 1706986275 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ISS</source>
+          <target state="needs-review-translation">Insuficiencia</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue ISS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 2958919024 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ISS Ret.</source>
+          <target state="needs-review-translation">ISS Ret.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue ISS Ret. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 2048639998 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PIS</source>
+          <target state="needs-review-translation">PIS</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue PIS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 855120833 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PIS Ret.</source>
+          <target state="needs-review-translation">Pis ret.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue PIS Ret. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 196877143 - EnumValue 1546827809 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ST</source>
+          <target state="needs-review-translation">ST</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum JXBRTaxIdentification - EnumValue ST - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
