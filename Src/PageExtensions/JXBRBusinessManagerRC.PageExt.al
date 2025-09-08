@@ -245,7 +245,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                         action(JXBRLocalizationReports)
                         {
                             Caption = 'Localization reports', Comment = 'ESP="Reportes localización"';
-                            RunObject = page JXARExecuteXMLPorts;
+                            RunObject = page JXBRExecuteReports;
                             ApplicationArea = All;
                             Image = Report;
                             ToolTip = 'Localization reports', Comment = 'ESP="Reportes localización"';

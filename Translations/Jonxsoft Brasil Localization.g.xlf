@@ -58,6 +58,91 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit JXBRLogic - Method ValidateCNPJCPF - NamedType Text35001008</note>
         </trans-unit>
+        <trans-unit id="Page 3642398500 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Localization Reports</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Reportes localización</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRExecuteReports - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3642398500 - Control 4105281732 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Filter</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Filtro</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRExecuteReports - Control GroupName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3642398500 - Control 837247550 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>From</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Desde</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRExecuteReports - Control FromDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3642398500 - Control 837247550 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>From</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Desde</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRExecuteReports - Control FromDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3642398500 - Control 4137594593 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>To</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Hasta</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRExecuteReports - Control ToDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3642398500 - Control 4137594593 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>To</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Hasta</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRExecuteReports - Control ToDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3642398500 - Action 3752070506 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export NIFs</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Exportar CUITs</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRExecuteReports - Action ExportNIFs - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3642398500 - Action 3752070506 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export NIFs</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Exportar CUITs</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRExecuteReports - Action ExportNIFs - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3642398500 - Action 2133145466 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sped</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Sped</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRExecuteReports - Action ExportSped - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3642398500 - Action 2133145466 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sped</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Sped</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRExecuteReports - Action ExportSped - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3642398500 - Action 2176459415 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reports</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRExecuteReports - Action Reports - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3642398500 - Action 2479350892 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Daily book</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Libro diario</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRExecuteReports - Action DailyBook - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3642398500 - Action 2479350892 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Daily book</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Libro diario</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRExecuteReports - Action DailyBook - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3642398500 - Action 2153967313 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Perceptions book</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Libro percepciones</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRExecuteReports - Action PerceptionsBook - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3642398500 - Action 2153967313 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Perceptions book</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Libro percepciones</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRExecuteReports - Action PerceptionsBook - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3642398500 - Action 2053469210 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Withholding book</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Libro retenciones</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRExecuteReports - Action RetentionsBook - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3642398500 - Action 2053469210 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Withholding book</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Libro retenciones</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRExecuteReports - Action RetentionsBook - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 4267569341 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Brasil Fiscal Types</source>
           <note from="Developer" annotates="general" priority="2">Tipos fiscales Brasil</note>
