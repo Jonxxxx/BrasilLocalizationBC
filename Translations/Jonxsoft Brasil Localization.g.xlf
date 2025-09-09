@@ -88,6 +88,36 @@
           <note from="Developer" annotates="general" priority="2">ESP=Hasta</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page JXBRExecuteReports - Control ToDate - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3642398500 - Action 1227369859 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>DCTF</source>
+          <note from="Developer" annotates="general" priority="2">ESP=DCTF</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRExecuteReports - Action ExportDCTF - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3642398500 - Action 1227369859 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>DCTF</source>
+          <note from="Developer" annotates="general" priority="2">ESP=DCTF</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRExecuteReports - Action ExportDCTF - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3642398500 - Action 3342665047 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>DIRF</source>
+          <note from="Developer" annotates="general" priority="2">ESP=DIRF</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRExecuteReports - Action ExportDIRF - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3642398500 - Action 3342665047 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>DIRF</source>
+          <note from="Developer" annotates="general" priority="2">ESP=DIRF</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRExecuteReports - Action ExportDIRF - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3642398500 - Action 4011145743 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>LFS-e (Libro Fiscal Servicios)</source>
+          <note from="Developer" annotates="general" priority="2">ESP=LFS-e (Libro Fiscal Servicios)</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRExecuteReports - Action ExportLFS - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3642398500 - Action 4011145743 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>LFS-e (Libro Fiscal Servicios)</source>
+          <note from="Developer" annotates="general" priority="2">ESP=LFS-e (Libro Fiscal Servicios)</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JXBRExecuteReports - Action ExportLFS - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3642398500 - Action 3752070506 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Export NIFs</source>
           <note from="Developer" annotates="general" priority="2">ESP=Exportar CUITs</note>

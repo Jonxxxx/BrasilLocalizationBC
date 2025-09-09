@@ -111,6 +111,63 @@ page 83502 JXBRExecuteReports
                 end;
             }
 
+            action(ExportDIRF)
+            {
+                ApplicationArea = All;
+                Caption = 'DIRF', Comment = 'ESP=DIRF';
+                ToolTip = 'DIRF', Comment = 'ESP=DIRF';
+                Image = ExportFile;
+                Promoted = true;
+                PromotedCategory = New;
+                PromotedOnly = true;
+
+                trigger OnAction()
+                var
+                    JXBRLogic: Codeunit JXBRLogic;
+                begin
+                    Clear(JXBRLogic);
+                    JXBRLogic.ExportDIRF(FromDate, ToDate);
+                end;
+            }
+
+            action(ExportDCTF)
+            {
+                ApplicationArea = All;
+                Caption = 'DCTF', Comment = 'ESP=DCTF';
+                ToolTip = 'DCTF', Comment = 'ESP=DCTF';
+                Image = ExportFile;
+                Promoted = true;
+                PromotedCategory = New;
+                PromotedOnly = true;
+
+                trigger OnAction()
+                var
+                    JXBRLogic: Codeunit JXBRLogic;
+                begin
+                    Clear(JXBRLogic);
+                    JXBRLogic.ExportDCTF(FromDate, ToDate);
+                end;
+            }
+
+            action(ExportLFS)
+            {
+                ApplicationArea = All;
+                Caption = 'LFS-e (Libro Fiscal Servicios)', Comment = 'ESP=LFS-e (Libro Fiscal Servicios)';
+                ToolTip = 'LFS-e (Libro Fiscal Servicios)', Comment = 'ESP=LFS-e (Libro Fiscal Servicios)';
+                Image = ExportFile;
+                Promoted = true;
+                PromotedCategory = New;
+                PromotedOnly = true;
+
+                trigger OnAction()
+                var
+                    JXBRLogic: Codeunit JXBRLogic;
+                begin
+                    Clear(JXBRLogic);
+                    JXBRLogic.ExportLFS(FromDate, ToDate);
+                end;
+            }
+
             action(ExportNIFs)
             {
                 ApplicationArea = All;

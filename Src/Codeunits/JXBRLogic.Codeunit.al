@@ -880,6 +880,803 @@ codeunit 83500 JXBRLogic
         exit('0000000'); // reemplazá cuando tengas IBGE en Vendor/Address (JXBR)
     end;
 
+    //DIRF
+    procedure ExportDIRF(DateFrom: Date; DateTo: Date)
+    var
+        CompInfo: Record "Company Information";
+        Vend: Record Vendor;
+        Wh: Record "JXLTWithholdLedgerEntry";
+        TempBlob: Codeunit "Temp Blob";
+        OutStr: OutStream;
+        FileName: Text;
+        // Header
+        CompanyName, CNPJ, UF : Text;
+        // Totales / contadores
+        CntH, CntD, CntT : Integer;
+        TotBase, TotWithheld : Decimal;
+        // Vars línea
+        VCode: Code[20];
+        VName, VTaxId, TaxCode, DirfNature, CertNo : Text;
+        BaseAmt, WithheldAmt : Decimal;
+        WhDate: Date;
+        CRLF: Text[2];
+    begin
+        // --- CRLF real ---
+        CRLF[1] := 13; // CR
+        CRLF[2] := 10; // LF
+
+        // --- Empresa ---
+        CompInfo.Get();
+        CompanyName := CompInfo.Name;
+        CNPJ := SanitizeDigitsDIRF(CompInfo."VAT Registration No."); // CNPJ emisor
+        UF := CopyStr(CompInfo."Country/Region Code", 1, 2);
+
+        // --- Archivo ---
+        FileName := StrSubstNo('DIRF_%1_%2.txt', Format(DateFrom, 0, 9), Format(DateTo, 0, 9));
+        TempBlob.CreateOutStream(OutStr);
+
+        // --- HEADER (H) ---
+        // Formato (MVP): H|CNPJ|RazonSocial|Desde|Hasta|UF|
+        WriteRawDIRF(OutStr, StrSubstNo('H|%1|%2|%3|%4|%5|',
+            CNPJ,
+            SanitizeTextDIRF(CompanyName),
+            Format(DateFrom, 0, 9),
+            Format(DateTo, 0, 9),
+            SanitizeTextDIRF(UF)), CRLF);
+        CntH += 1;
+
+        // --- DETALLES (D) ---
+        // Filtro: Realizadas, por fecha
+        Wh.Reset();
+        Wh.SetRange(JXLTWitholdingType, Wh.JXLTWitholdingType::Realizada);
+        Wh.SetRange(JXLTWitholdingDate, DateFrom, DateTo);
+
+        TotBase := 0;
+        TotWithheld := 0;
+        if Wh.FindSet() then
+            repeat
+                // Datos por línea
+                VCode := Wh.JXLTVendorCode;
+                VName := '';
+                VTaxId := '';
+                if (VCode <> '') and Vend.Get(VCode) then begin
+                    VName := Vend.Name;
+                    VTaxId := SanitizeDigitsDIRF(Vend."VAT Registration No."); // CNPJ/CPF proveedor
+                end;
+
+                TaxCode := Wh.JXLTTaxCode;                             // tu código (ej: 'IRRF','PIS RET.','CSLL RET.', etc.)
+                DirfNature := MapToDirfNatureDIRF(TaxCode);                // mapeo a naturaleza DIRF
+                BaseAmt := Wh.JXLTBase;
+                if BaseAmt = 0 then
+                    BaseAmt := Wh.JXLTCalculationBase;                 // fallback si usás este campo
+                WithheldAmt := Wh.JXLTWitholdingAmount;
+                WhDate := Wh.JXLTWitholdingDate;
+                CertNo := Wh.JXLTWitholdingCertificateNo;
+
+                // Línea detalle (MVP): D|VendorCode|VendorName|VendorTaxId|TaxCode|DirfNature|Fecha|Base|Importe|Cert|
+                WriteRawDIRF(OutStr, StrSubstNo('D|%1|%2|%3|%4|%5|%6|%7|%8|%9|',
+                    VCode,
+                    SanitizeTextDIRF(VName),
+                    VTaxId,
+                    SanitizeTextDIRF(TaxCode),
+                    SanitizeTextDIRF(DirfNature),
+                    Format(WhDate, 0, 9),
+                    FormatDecimalDIRF(BaseAmt),
+                    FormatDecimalDIRF(WithheldAmt),
+                    SanitizeTextDIRF(CertNo)), CRLF);
+                CntD += 1;
+
+                TotBase += BaseAmt;
+                TotWithheld += WithheldAmt;
+
+            until Wh.Next() = 0;
+
+        // --- TRAILER (T) ---
+        // Formato (MVP): T|CntH|CntD|CntT|TotBase|TotRet|
+        WriteRawDIRF(OutStr, StrSubstNo('T|%1|%2|%3|%4|%5|',
+            CntH, CntD, 1, FormatDecimalDIRF(TotBase), FormatDecimalDIRF(TotWithheld)), CRLF);
+        CntT += 1;
+
+        // --- Descargar ---
+        DownloadFromStream(TempBlob.CreateInStream(), '', '', FileName, FileName);
+    end;
+
+    // ---------------- Helpers ----------------
+
+    local procedure WriteRawDIRF(var OutStr: OutStream; Line: Text; CRLF: Text[2])
+    begin
+        OutStr.WriteText(Line + CRLF);
+    end;
+
+    local procedure FormatDecimalDIRF(Value: Decimal): Text
+    begin
+        // Ajustá a máscara regional que espere tu validador (coma/punto)
+        exit(Format(Value, 0, 9));
+    end;
+
+    local procedure SanitizeDigitsDIRF(Value: Text): Text
+    var
+        c: Char;
+        res: Text;
+        i: Integer;
+    begin
+        for i := 1 to StrLen(Value) do begin
+            c := Value[i];
+            if (c in ['0' .. '9']) then
+                res += Format(c);
+        end;
+        exit(res);
+    end;
+
+    local procedure SanitizeTextDIRF(Value: Text): Text
+    begin
+        // Evitar pipes u otros que rompan layout
+        exit(DelChr(Value, '=', '|'));
+    end;
+
+    local procedure MapToDirfNatureDIRF(TaxCode: Text): Text
+    begin
+        // 🔁 Ajustá mapeo a tus códigos reales de JXLTTaxCode
+        // Ejemplos comunes:
+        if StrPos(UpperCase(TaxCode), 'IRPF') > 0 then
+            exit('IRRF_PF'); // IR impuesto de renta retenido PF
+        if StrPos(UpperCase(TaxCode), 'IRRF') > 0 then
+            exit('IRRF_PJ'); // renta retenida PJ
+        if StrPos(UpperCase(TaxCode), 'CSLL') > 0 then
+            exit('CSLL_RET');
+        if StrPos(UpperCase(TaxCode), 'PIS') > 0 then
+            exit('PIS_RET');
+        if StrPos(UpperCase(TaxCode), 'COFINS') > 0 then
+            exit('COFINS_RET');
+        if StrPos(UpperCase(TaxCode), 'INSS') > 0 then
+            exit('INSS_RET');
+        if StrPos(UpperCase(TaxCode), 'ISS') > 0 then
+            exit('ISS_RET');
+
+        exit('OTROS');
+    end;
+    //DIRF END
+
+    //DCTF
+    procedure ExportDCTF(DateFrom: Date; DateTo: Date)
+    var
+        // Empresa
+        CompInfo: Record "Company Information";
+        CompanyName, CNPJ, UF : Text;
+
+        // I/O
+        TempBlob: Codeunit "Temp Blob";
+        OutStr: OutStream;
+        FileName: Text;
+        CRLF: Text[2];
+
+        // VAT (débitos PIS/COFINS)
+        SalesPisBase, SalesPisAmt, SalesCofinsBase, SalesCofinsAmt : Decimal;
+        PurchPisBase, PurchPisAmt, PurchCofinsBase, PurchCofinsAmt : Decimal;
+
+        // Retenciones federales (créditos contra DCTF)
+        Wh: Record "JXLTWithholdLedgerEntry";
+        TotIRRF, TotPISRet, TotCofinsRet, TotCSLLRet : Decimal;
+
+        // Contadores
+        CntH, CntD, CntT : Integer;
+
+        // Régimen (para tasas si necesitás)
+        PisCumulativo: Boolean;
+    begin
+        // --- CRLF real ---
+        CRLF[1] := 13;
+        CRLF[2] := 10;
+
+        // --- Empresa ---
+        CompInfo.Get();
+        CompanyName := CompInfo.Name;
+        CNPJ := SanitizeDigitsDCTF(CompInfo."VAT Registration No.");
+        UF := CopyStr(CompInfo."Country/Region Code", 1, 2);
+
+        // --- Archivo ---
+        FileName := StrSubstNo('DCTF_%1_%2.txt', Format(DateFrom, 0, 9), Format(DateTo, 0, 9));
+        TempBlob.CreateOutStream(OutStr);
+
+        // =========================
+        // 1) HEADER
+        // =========================
+        // H|CNPJ|RazonSocial|PeriodoDesde|PeriodoHasta|UF|
+        WriteRawDCTF(OutStr, StrSubstNo('H|%1|%2|%3|%4|%5|',
+            CNPJ,
+            SanitizeTextDCTF(CompanyName),
+            Format(DateFrom, 0, 9),
+            Format(DateTo, 0, 9),
+            SanitizeTextDCTF(UF)), CRLF);
+        CntH += 1;
+
+        // =========================
+        // 2) DÉBITOS (PIS/COFINS) — VAT Entry
+        // =========================
+        // Recalculamos como en SPED (ventas – compras – NCs)
+        PisCumulativo := true; // si querés, traelo de tu enum 83501 "BR Fiscal Type"
+
+        CalcPisCofinsSalesDCTF(DateFrom, DateTo, SalesPisBase, SalesPisAmt, SalesCofinsBase, SalesCofinsAmt, PisCumulativo);
+        CalcPisCofinsPurchDCTF(DateFrom, DateTo, PurchPisBase, PurchPisAmt, PurchCofinsBase, PurchCofinsAmt, PisCumulativo);
+
+        // Neto período
+        // PIS
+        AddDctfLineDCTF(OutStr, 'PIS', MapToDctfTaxDCTF('PIS'),
+            SalesPisBase - PurchPisBase, SalesPisAmt - PurchPisAmt, CRLF, CntD);
+        // COFINS
+        AddDctfLineDCTF(OutStr, 'COFINS', MapToDctfTaxDCTF('COFINS'),
+            SalesCofinsBase - PurchCofinsBase, SalesCofinsAmt - PurchCofinsAmt, CRLF, CntD);
+
+        // =========================
+        // 3) CRÉDITOS / RETENCIONES FEDERALES — JXLTWithholdLedgerEntry
+        // =========================
+        // Consideramos retenciones "Realizadas" en el período: IRRF (IRPF/IRPJ fuente), PIS Ret., COFINS Ret., CSLL Ret.
+        TotIRRF := 0;
+        TotPISRet := 0;
+        TotCofinsRet := 0;
+        TotCSLLRet := 0;
+
+        Wh.Reset();
+        Wh.SetRange(JXLTWitholdingType, Wh.JXLTWitholdingType::Realizada);
+        Wh.SetRange(JXLTWitholdingDate, DateFrom, DateTo);
+        if Wh.FindSet() then
+            repeat
+                case UpperCase(Wh.JXLTTaxCode) of
+                    // Ajustá a tus códigos reales de "Configuración Retención Impuestos"
+                    'IRRF', 'IRPF', 'IRPF RET.', 'IRPF RET', 'IRRF RET.':
+                        TotIRRF += Wh.JXLTWitholdingAmount;
+                    'PIS RET.', 'PIS RET', 'PIS_RET':
+                        TotPISRet += Wh.JXLTWitholdingAmount;
+                    'COFINS RET.', 'COFINS RET', 'COFINS_RET':
+                        TotCofinsRet += Wh.JXLTWitholdingAmount;
+                    'CSLL RET.', 'CSLL RET', 'CSLL_RET', 'CSL RET.':
+                        TotCSLLRet += Wh.JXLTWitholdingAmount;
+                end;
+            until Wh.Next() = 0;
+
+        // Emisión de líneas de crédito (valores positivos como créditos a compensar)
+        if TotIRRF <> 0 then
+            AddDctfCreditLineDCTF(OutStr, 'IRRF', MapToDctfTaxDCTF('IRRF'), TotIRRF, CRLF, CntD);
+        if TotPISRet <> 0 then
+            AddDctfCreditLineDCTF(OutStr, 'PIS_RET', MapToDctfTaxDCTF('PIS_RET'), TotPISRet, CRLF, CntD);
+        if TotCofinsRet <> 0 then
+            AddDctfCreditLineDCTF(OutStr, 'COFINS_RET', MapToDctfTaxDCTF('COFINS_RET'), TotCofinsRet, CRLF, CntD);
+        if TotCSLLRet <> 0 then
+            AddDctfCreditLineDCTF(OutStr, 'CSLL_RET', MapToDctfTaxDCTF('CSLL_RET'), TotCSLLRet, CRLF, CntD);
+
+        // =========================
+        // 4) TRAILER
+        // =========================
+        // T|CntH|CntD|CntT|
+        WriteRawDCTF(OutStr, StrSubstNo('T|%1|%2|%3|', CntH, CntD, 1), CRLF);
+        CntT += 1;
+
+        // Descargar
+        DownloadFromStream(TempBlob.CreateInStream(), '', '', FileName, FileName);
+    end;
+
+    // ---------- Helpers core ----------
+
+    local procedure AddDctfLineDCTF(var OutStr: OutStream; TaxName: Text; DctfTaxCode: Text; BaseAmt: Decimal; TaxAmt: Decimal; CRLF: Text[2]; var CntD: Integer)
+    begin
+        // D|TaxName|DCTFCode|Base|Impuesto|Tipo=DEBITO|
+        WriteRawDCTF(OutStr, StrSubstNo('D|%1|%2|%3|%4|DEBITO|',
+            SanitizeTextDCTF(TaxName),
+            SanitizeTextDCTF(DctfTaxCode),
+            FormatDecimalDCTF(BaseAmt),
+            FormatDecimalDCTF(TaxAmt)), CRLF);
+        CntD += 1;
+    end;
+
+    local procedure AddDctfCreditLineDCTF(var OutStr: OutStream; TaxName: Text; DctfTaxCode: Text; CreditAmt: Decimal; CRLF: Text[2]; var CntD: Integer)
+    begin
+        // D|TaxName|DCTFCode|Base=0|Importe=Crédito|Tipo=CREDITO|
+        WriteRawDCTF(OutStr, StrSubstNo('D|%1|%2|%3|%4|CREDITO|',
+            SanitizeTextDCTF(TaxName),
+            SanitizeTextDCTF(DctfTaxCode),
+            '0',
+            FormatDecimalDCTF(CreditAmt)), CRLF);
+        CntD += 1;
+    end;
+
+    local procedure MapToDctfTaxDCTF(TaxName: Text): Text
+    begin
+        // 🔁 Ajustá al código oficial DCTF (receita/código DARF) que uses en tu cliente
+        case UpperCase(TaxName) of
+            'PIS':
+                exit('PIS');
+            'COFINS':
+                exit('COFINS');
+            'IRRF', 'IRPF':
+                exit('IRRF');
+            'PIS_RET':
+                exit('PIS_RET');
+            'COFINS_RET':
+                exit('COFINS_RET');
+            'CSLL_RET':
+                exit('CSLL_RET');
+            'CSLL':
+                exit('CSLL');
+            'IRPJ':
+                exit('IRPJ');
+        end;
+        exit(UpperCase(TaxName));
+    end;
+
+    // ---------- Cálculo PIS/COFINS (similar SPED) ----------
+
+    local procedure CalcPisCofinsSalesDCTF(DateFrom: Date; DateTo: Date; var PisBase: Decimal; var PisAmt: Decimal; var CofBase: Decimal; var CofAmt: Decimal; PisCumulativo: Boolean)
+    var
+        VATEntry: Record "VAT Entry";
+        SalesInvHdr: Record "Sales Invoice Header";
+        CrHdr: Record "Sales Cr.Memo Header";
+        TaxJur: Record "Tax Jurisdiction";
+        DocNo: Code[20];
+        LastDoc: Code[20];
+        DocPisBase, DocPisAmt, DocCofBase, DocCofAmt : Decimal;
+    begin
+        PisBase := 0;
+        PisAmt := 0;
+        CofBase := 0;
+        CofAmt := 0;
+
+        // Ventas (facturas)
+        VATEntry.Reset();
+        VATEntry.SetRange("Posting Date", DateFrom, DateTo);
+        VATEntry.SetCurrentKey("Document No.");
+        LastDoc := '';
+        if VATEntry.FindSet() then
+            repeat
+                DocNo := VATEntry."Document No.";
+                if (DocNo <> '') and (DocNo <> LastDoc) then begin
+                    LastDoc := DocNo;
+                    if SalesInvHdr.Get(DocNo) then begin
+                        Clear(DocPisBase);
+                        Clear(DocPisAmt);
+                        Clear(DocCofBase);
+                        Clear(DocCofAmt);
+                        SumFromVatByJurDCTF(DocNo, DateFrom, DateTo, DocPisBase, DocPisAmt, DocCofBase, DocCofAmt);
+                        PisBase += DocPisBase;
+                        PisAmt += DocPisAmt;
+                        CofBase += DocCofBase;
+                        CofAmt += DocCofAmt;
+                    end;
+                end;
+            until VATEntry.Next() = 0;
+
+        // Ventas (notas de crédito)
+        CrHdr.Reset();
+        CrHdr.SetRange("Posting Date", DateFrom, DateTo);
+        if CrHdr.FindSet() then
+            repeat
+                Clear(DocPisBase);
+                Clear(DocPisAmt);
+                Clear(DocCofBase);
+                Clear(DocCofAmt);
+                SumFromVatByJurDCTF(CrHdr."No.", DateFrom, DateTo, DocPisBase, DocPisAmt, DocCofBase, DocCofAmt);
+                // Créditos restan
+                PisBase -= Abs(DocPisBase);
+                PisAmt -= Abs(DocPisAmt);
+                CofBase -= Abs(DocCofBase);
+                CofAmt -= Abs(DocCofAmt);
+            until CrHdr.Next() = 0;
+    end;
+
+    local procedure CalcPisCofinsPurchDCTF(DateFrom: Date; DateTo: Date; var PisBase: Decimal; var PisAmt: Decimal; var CofBase: Decimal; var CofAmt: Decimal; PisCumulativo: Boolean)
+    var
+        PurchInvHdr: Record "Purch. Inv. Header";
+        PurchCrHdr: Record "Purch. Cr. Memo Hdr.";
+        DocPisBase, DocPisAmt, DocCofBase, DocCofAmt : Decimal;
+    begin
+        PisBase := 0;
+        PisAmt := 0;
+        CofBase := 0;
+        CofAmt := 0;
+
+        // Compras (facturas) — créditos
+        PurchInvHdr.Reset();
+        PurchInvHdr.SetRange("Posting Date", DateFrom, DateTo);
+        if PurchInvHdr.FindSet() then
+            repeat
+                Clear(DocPisBase);
+                Clear(DocPisAmt);
+                Clear(DocCofBase);
+                Clear(DocCofAmt);
+                SumFromVatByJurDCTF(PurchInvHdr."No.", DateFrom, DateTo, DocPisBase, DocPisAmt, DocCofBase, DocCofAmt);
+                PisBase += DocPisBase;
+                PisAmt += DocPisAmt;
+                CofBase += DocCofBase;
+                CofAmt += DocCofAmt;
+            until PurchInvHdr.Next() = 0;
+
+        // Compras (notas de crédito) — reversa créditos
+        PurchCrHdr.Reset();
+        PurchCrHdr.SetRange("Posting Date", DateFrom, DateTo);
+        if PurchCrHdr.FindSet() then
+            repeat
+                Clear(DocPisBase);
+                Clear(DocPisAmt);
+                Clear(DocCofBase);
+                Clear(DocCofAmt);
+                SumFromVatByJurDCTF(PurchCrHdr."No.", DateFrom, DateTo, DocPisBase, DocPisAmt, DocCofBase, DocCofAmt);
+                PisBase -= Abs(DocPisBase);
+                PisAmt -= Abs(DocPisAmt);
+                CofBase -= Abs(DocCofBase);
+                CofAmt -= Abs(DocCofAmt);
+            until PurchCrHdr.Next() = 0;
+    end;
+
+    local procedure SumFromVatByJurDCTF(DocNo: Code[20]; DateFrom: Date; DateTo: Date; var PisBase: Decimal; var PisAmt: Decimal; var CofBase: Decimal; var CofAmt: Decimal)
+    var
+        VATEntry: Record "VAT Entry";
+        TaxJur: Record "Tax Jurisdiction";
+    begin
+        VATEntry.Reset();
+        VATEntry.SetRange("Posting Date", DateFrom, DateTo);
+        VATEntry.SetRange("Document No.", DocNo);
+
+        if VATEntry.FindSet() then
+            repeat
+                if TaxJur.Get(VATEntry."Tax Jurisdiction Code") then begin
+                    case TaxJur.JXBRTaxIdentification of
+                        TaxJur.JXBRTaxIdentification::PIS:
+                            begin
+                                PisBase += Abs(VATEntry.Base);
+                                PisAmt += Abs(VATEntry.Amount);
+                            end;
+                        TaxJur.JXBRTaxIdentification::COFINS:
+                            begin
+                                CofBase += Abs(VATEntry.Base);
+                                CofAmt += Abs(VATEntry.Amount);
+                            end;
+                    end;
+                end;
+            until VATEntry.Next() = 0;
+    end;
+
+    // ---------- Utilidades ----------
+
+    local procedure WriteRawDCTF(var OutStr: OutStream; Line: Text; CRLF: Text[2])
+    begin
+        OutStr.WriteText(Line + CRLF);
+    end;
+
+    local procedure SanitizeDigitsDCTF(Value: Text): Text
+    var
+        c: Char;
+        res: Text;
+        i: Integer;
+    begin
+        for i := 1 to StrLen(Value) do begin
+            c := Value[i];
+            if (c in ['0' .. '9']) then
+                res += Format(c);
+        end;
+        exit(res);
+    end;
+
+    local procedure SanitizeTextDCTF(Value: Text): Text
+    begin
+        exit(DelChr(Value, '=', '|'));
+    end;
+
+    local procedure FormatDecimalDCTF(Value: Decimal): Text
+    begin
+        exit(Format(Value, 0, 9)); // ajustá decimal/coma según validador
+    end;
+    //DCTF END
+
+    //LFS
+    procedure ExportLFS(DateFrom: Date; DateTo: Date)
+    var
+        // Empresa
+        CompInfo: Record "Company Information";
+        CompanyName, CNPJ, UF, IM : Text;
+
+        // Datos cliente/doc
+        Cust: Record Customer;
+        SalesInvHdr: Record "Sales Invoice Header";
+        SalesCrHdr: Record "Sales Cr.Memo Header";
+
+        // VAT
+        VATEntry: Record "VAT Entry";
+        TaxJur: Record "Tax Jurisdiction";
+
+        // I/O
+        TempBlob: Codeunit "Temp Blob";
+        OutStr: OutStream;
+        FileName: Text;
+        CRLF: Text[2];
+
+        // Contadores / totales
+        CntH, CntD, CntT : Integer;
+        TotServ, TotBaseISS, TotISS : Decimal;
+
+        // Vars por doc
+        DocNo: Code[20];
+        DocDate: Date;
+        DocServVal, DocISSBase, DocISSAmt : Decimal;
+        DestName, DestTaxId, DestIBGE : Text;
+        Rps: Text; // si tenés Nº RPS/NFS-e en un campo JXBR, podés traerlo aquí
+        NBSLC116: Text; // código de servicio (LC 116) si lo tenés
+    begin
+        // --- CRLF real ---
+        CRLF[1] := 13;
+        CRLF[2] := 10;
+
+        // --- Empresa ---
+        CompInfo.Get();
+        CompanyName := CompInfo.Name;
+        CNPJ := SanitizeDigitsLFS(CompInfo."VAT Registration No.");
+        UF := CopyStr(CompInfo."Country/Region Code", 1, 2);
+        IM := CompInfo.JXBRIM; // Inscrição Municipal (campo que agregaste)
+
+        // --- Archivo ---
+        FileName := StrSubstNo('LFS_%1_%2.txt', Format(DateFrom, 0, 9), Format(DateTo, 0, 9));
+        TempBlob.CreateOutStream(OutStr);
+
+        // =========================
+        // 1) HEADER
+        // =========================
+        // H|CNPJ|RazaoSocial|IM|UF|PeriodoDesde|PeriodoHasta|
+        WriteRawLFS(OutStr, StrSubstNo('H|%1|%2|%3|%4|%5|%6|',
+            CNPJ,
+            SanitizeTextLFS(CompanyName),
+            SanitizeTextLFS(IM),
+            SanitizeTextLFS(UF),
+            Format(DateFrom, 0, 9),
+            Format(DateTo, 0, 9)), CRLF);
+        CntH += 1;
+
+        // =========================
+        // 2) DETALLES – FACTURAS
+        // =========================
+        // Por cada factura: calculamos Base/ISS desde VATEntry (Jurisdicción = ISS)
+        TotServ := 0;
+        TotBaseISS := 0;
+        TotISS := 0;
+
+        SalesInvHdr.Reset();
+        SalesInvHdr.SetRange("Posting Date", DateFrom, DateTo);
+        if SalesInvHdr.FindSet() then
+            repeat
+                Clear(DocServVal);
+                Clear(DocISSBase);
+                Clear(DocISSAmt);
+                DocNo := SalesInvHdr."No.";
+                DocDate := SalesInvHdr."Posting Date";
+
+                // Totales del servicio (líneas)
+                DocServVal := GetSalesServiceAmountLFS(SalesInvHdr);
+
+                // ISS (VAT Entry)
+                SumISSFromVATLFS(DocNo, DateFrom, DateTo, DocISSBase, DocISSAmt);
+
+                // Destinatario
+                DestName := '';
+                DestTaxId := '';
+                DestIBGE := '0000000';
+                if Cust.Get(SalesInvHdr."Sell-to Customer No.") then begin
+                    DestName := Cust.Name;
+                    DestTaxId := SanitizeDigitsLFS(Cust."VAT Registration No."); // CNPJ/CPF
+                    DestIBGE := GetMunicipioIBGELFS(Cust);                       // completar cuando tengas campo JXBR
+                end;
+
+                // Si no hay movimiento ISS, igual registramos el documento (exento al 0) — opcional
+                // D|Data|Tipo(FT)|DocNo|RPS|NFS-e|DestNome|DestTaxId|CodMun|ValServ|BaseISS|Aliq%|ValISS|Sit|
+                WriteRawLFS(OutStr, StrSubstNo('D|%1|FT|%2|%3|%4|%5|%6|%7|%8|%9|%10|%11|N|',
+                    Format(DocDate, 0, 9),
+                    SanitizeTextLFS(DocNo),
+                    SanitizeTextLFS(GetRpsForInvoiceLFS(SalesInvHdr)), // si no tenés, deja en blanco
+                    SanitizeTextLFS(GetNfseForInvoiceLFS(SalesInvHdr)), // si no tenés, deja en blanco
+                    SanitizeTextLFS(DestName),
+                    DestTaxId,
+                    DestIBGE,
+                    FormatDecimalLFS(DocServVal),
+                    FormatDecimalLFS(DocISSBase),
+                    FormatPercentLFS(CalcIssRateLFS(DocISSBase, DocISSAmt)),
+                    FormatDecimalLFS(DocISSAmt)), CRLF);
+                CntD += 1;
+
+                TotServ += DocServVal;
+                TotBaseISS += DocISSBase;
+                TotISS += DocISSAmt;
+
+            until SalesInvHdr.Next() = 0;
+
+        // =========================
+        // 3) DETALLES – NOTAS DE CRÉDITO
+        // =========================
+        SalesCrHdr.Reset();
+        SalesCrHdr.SetRange("Posting Date", DateFrom, DateTo);
+        if SalesCrHdr.FindSet() then
+            repeat
+                Clear(DocServVal);
+                Clear(DocISSBase);
+                Clear(DocISSAmt);
+                DocNo := SalesCrHdr."No.";
+                DocDate := SalesCrHdr."Posting Date";
+
+                // Valor servicio (negativo)
+                DocServVal := GetSalesCrServiceAmountLFS(SalesCrHdr);
+
+                // ISS (negativo)
+                SumISSFromVATLFS(DocNo, DateFrom, DateTo, DocISSBase, DocISSAmt);
+                DocISSBase := -Abs(DocISSBase);
+                DocISSAmt := -Abs(DocISSAmt);
+
+                DestName := '';
+                DestTaxId := '';
+                DestIBGE := '0000000';
+                if Cust.Get(SalesCrHdr."Bill-to Customer No.") then begin
+                    DestName := SalesCrHdr."Bill-to Name";
+                    DestTaxId := SanitizeDigitsLFS(Cust."VAT Registration No.");
+                    DestIBGE := GetMunicipioIBGELFS(Cust);
+                end;
+
+                // Tipo = NC
+                WriteRawLFS(OutStr, StrSubstNo('D|%1|NC|%2|%3|%4|%5|%6|%7|%8|%9|%10|%11|N|',
+                    Format(DocDate, 0, 9),
+                    SanitizeTextLFS(DocNo),
+                    SanitizeTextLFS(GetRpsForCrLFS(SalesCrHdr)),
+                    SanitizeTextLFS(GetNfseForCrLFS(SalesCrHdr)),
+                    SanitizeTextLFS(DestName),
+                    DestTaxId,
+                    DestIBGE,
+                    FormatDecimalLFS(DocServVal),
+                    FormatDecimalLFS(DocISSBase),
+                    FormatPercentLFS(CalcIssRateLFS(DocISSBase, DocISSAmt)), // da positivo si usás Abs en cálculo
+                    FormatDecimalLFS(DocISSAmt)), CRLF);
+                CntD += 1;
+
+                TotServ += DocServVal;
+                TotBaseISS += DocISSBase;
+                TotISS += DocISSAmt;
+
+            until SalesCrHdr.Next() = 0;
+
+        // =========================
+        // 4) TRAILER
+        // =========================
+        // T|CntH|CntD|CntT|TotServ|TotBaseISS|TotISS|
+        WriteRawLFS(OutStr, StrSubstNo('T|%1|%2|%3|%4|%5|%6|',
+            1, CntD, 1,
+            FormatDecimalLFS(TotServ),
+            FormatDecimalLFS(TotBaseISS),
+            FormatDecimalLFS(TotISS)), CRLF);
+        CntT += 1;
+
+        // Descargar
+        DownloadFromStream(TempBlob.CreateInStream(), '', '', FileName, FileName);
+    end;
+
+    // ================= Helpers =================
+
+    local procedure SumISSFromVATLFS(DocNo: Code[20]; DateFrom: Date; DateTo: Date; var BaseISS: Decimal; var ValISS: Decimal)
+    var
+        VATEntry: Record "VAT Entry";
+        TaxJur: Record "Tax Jurisdiction";
+    begin
+        VATEntry.Reset();
+        VATEntry.SetRange("Posting Date", DateFrom, DateTo);
+        VATEntry.SetRange("Document No.", DocNo);
+
+        if VATEntry.FindSet() then
+            repeat
+                if TaxJur.Get(VATEntry."Tax Jurisdiction Code") then begin
+                    case TaxJur.JXBRTaxIdentification of
+                        TaxJur.JXBRTaxIdentification::ISS:
+                            begin
+                                BaseISS += Abs(VATEntry.Base);
+                                ValISS += Abs(VATEntry.Amount);
+                            end;
+                    // Si manejás retención de ISS en pagos y querés reportarla acá:
+                    // TaxJur.JXBRTaxIdentification::"ISS Ret." -> acumular aparte si corresponde
+                    end;
+                end;
+            until VATEntry.Next() = 0;
+    end;
+
+    local procedure GetSalesServiceAmountLFS(Hdr: Record "Sales Invoice Header"): Decimal
+    var
+        Line: Record "Sales Invoice Line";
+        Total: Decimal;
+    begin
+        Line.Reset();
+        Line.SetRange("Document No.", Hdr."No.");
+        // Si tus servicios son G/L o Item Servicio
+        Line.SetFilter(Type, '%1|%2', Line.Type::Item, Line.Type::"G/L Account");
+        if Line.FindSet() then
+            repeat
+                Total += Line."Line Amount";
+            until Line.Next() = 0;
+        exit(Total);
+    end;
+
+    local procedure GetSalesCrServiceAmountLFS(Hdr: Record "Sales Cr.Memo Header"): Decimal
+    var
+        Line: Record "Sales Cr.Memo Line";
+        Total: Decimal;
+    begin
+        Line.Reset();
+        Line.SetRange("Document No.", Hdr."No.");
+        Line.SetFilter(Type, '%1|%2', Line.Type::Item, Line.Type::"G/L Account");
+        if Line.FindSet() then
+            repeat
+                Total += Line."Line Amount";
+            until Line.Next() = 0;
+        exit(-Abs(Total)); // negativo por NC
+    end;
+
+    local procedure CalcIssRateLFS(BaseISS: Decimal; ValISS: Decimal): Decimal
+    begin
+        if Abs(BaseISS) = 0 then
+            exit(0);
+        exit(Round(100 * Abs(ValISS) / Abs(BaseISS), 0.00001, '='));
+    end;
+
+    local procedure GetMunicipioIBGELFS(Cust: Record Customer): Text
+    begin
+        // Reemplazar por tu campo JXBR de IBGE cuando lo tengas cargado
+        exit('0000000');
+    end;
+
+    local procedure GetRpsForInvoiceLFS(Hdr: Record "Sales Invoice Header"): Text
+    begin
+        // Si tenés Nº RPS/NFS-e en campos JXBR*, devolverlos aquí
+        exit('');
+    end;
+
+    local procedure GetNfseForInvoiceLFS(Hdr: Record "Sales Invoice Header"): Text
+    begin
+        exit('');
+    end;
+
+    local procedure GetRpsForCrLFS(Hdr: Record "Sales Cr.Memo Header"): Text
+    begin
+        exit('');
+    end;
+
+    local procedure GetNfseForCrLFS(Hdr: Record "Sales Cr.Memo Header"): Text
+    begin
+        exit('');
+    end;
+
+    local procedure WriteRawLFS(var OutStr: OutStream; Line: Text; CRLF: Text[2])
+    begin
+        OutStr.WriteText(Line + CRLF);
+    end;
+
+    local procedure FormatDecimalLFS(Value: Decimal): Text
+    begin
+        exit(Format(Value, 0, 9)); // ajustá formato decimal (coma/punto) si lo pide el municipio
+    end;
+
+    local procedure FormatPercentLFS(Value: Decimal): Text
+    begin
+        exit(FormatDecimalLFS(Value));
+    end;
+
+    local procedure SanitizeDigitsLFS(Value: Text): Text
+    var
+        c: Char;
+        res: Text;
+        i: Integer;
+    begin
+        for i := 1 to StrLen(Value) do begin
+            c := Value[i];
+            if (c in ['0' .. '9']) then
+                res += Format(c);
+        end;
+        exit(res);
+    end;
+
+    local procedure SanitizeTextLFS(Value: Text): Text
+    begin
+        exit(DelChr(Value, '=', '|'));
+    end;
+    //LFS END
+
     var
         CRLF: Text[2];
 
