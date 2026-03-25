@@ -613,6 +613,11 @@
           <note from="Developer" annotates="general" priority="2">ESP="Escala retencion"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRBusinessManagerRC - Action JXBRWithholdTaxScale - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3032692397 - Control 3185361028 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3469146285">
+          <source>Brasil Loc Enabled</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRCompanyInfo - Control JXBRBrasilLocEnabled - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3032692397 - Control 3201477583 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3469146285">
           <source>C.N.P.J.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -662,6 +667,21 @@
           <source>Tax Identification</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension JXBRWithholdingTax - Control JXBRTaxIdentification - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2835171076 - Field 3816478045 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 627389406">
+          <source>Not Show Loc Brasil</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension JXBRApplicationAreaSetup - Field JXBRNotshowBrasil - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2835171076 - Field 2906038210 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 627389406">
+          <source>Show Loc Brasil</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension JXBRApplicationAreaSetup - Field JXBRshowBrasil - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3032692397 - Field 3185361028 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3469146285">
+          <source>Brasil Localization Enabled</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension JXBRCompanyInfo - Field JXBRBrasilLocEnabled - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3032692397 - Field 3201477583 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3469146285">
           <source>C.N.P.J.</source>

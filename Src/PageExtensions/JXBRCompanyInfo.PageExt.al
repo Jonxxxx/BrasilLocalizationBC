@@ -24,6 +24,12 @@ pageextension 83505 JXBRCompanyInfo extends "Company Information"
                 ToolTip = 'I.M';
                 Visible = IsBrasil;
             }
+
+            field(JXBRBrasilLocEnabled; Rec.JXBRBrasilLocEnabled)
+            {
+                ApplicationArea = All;
+                ToolTip = 'Brasil Loc Enabled';
+            }
         }
     }
 

@@ -39,6 +39,25 @@ tableextension 83501 JXBRCompanyInfo extends "Company Information"
             Editable = false;
             DataClassification = CustomerContent;
         }
+        field(83505; JXBRBrasilLocEnabled; Boolean)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Brasil Localization Enabled';
+
+            trigger OnValidate()
+            var
+                JXBRBrasilApplicationAreaMgt: Codeunit JXBRBrasilApplicationAreaMgt;
+                AppArea: Text;
+            begin
+                if JXBRBrasilLocEnabled then
+                    AppArea := '#JXBRshowBrasil'
+                else
+                    AppArea := '#JXBRNotshowBrasil';
+
+                JXBRBrasilApplicationAreaMgt.SetGlobalAppAreaBrasil(AppArea);
+                JXBRBrasilApplicationAreaMgt.ApplyBrasilApplicationArea();
+            end;
+        }
     }
 
     trigger OnModify()

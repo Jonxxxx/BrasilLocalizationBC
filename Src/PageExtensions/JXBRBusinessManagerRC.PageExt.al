@@ -17,7 +17,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                     {
                         Caption = 'Tax jurisdictions', Comment = 'ESP="Jurisdicciones de impuestos"';
                         RunObject = page JXBRTaxJurisdictions;
-                        ApplicationArea = All;
+                        ApplicationArea = JXBRshowBrasil;
                         Image = SalesTax;
                         ToolTip = 'Tax jurisdictions setup', Comment = 'ESP="Configuracion de jurisdicciones de impuestos"';
                     }
@@ -26,7 +26,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                     {
                         Caption = 'Tax groups', Comment = 'ESP="Grupos de impuestos"';
                         RunObject = page "Tax Groups";
-                        ApplicationArea = All;
+                        ApplicationArea = JXBRshowBrasil;
                         Image = TaxSetup;
                         ToolTip = 'Tax groups setup', Comment = 'ESP="Configuracion de grupos de impuestos"';
                     }
@@ -35,7 +35,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                     {
                         Caption = 'Tax area', Comment = 'ESP="Areas de impuestos"';
                         RunObject = page JXLTTaxAreas;
-                        ApplicationArea = All;
+                        ApplicationArea = JXBRshowBrasil;
                         Image = CollectedTax;
                         ToolTip = 'Tax area setup', Comment = 'ESP="Configuracion de areas de impuestos"';
                     }
@@ -44,7 +44,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                     {
                         Caption = 'Tax details', Comment = 'ESP="Detalles de impuestos"';
                         RunObject = page JXLTTaxDetails;
-                        ApplicationArea = All;
+                        ApplicationArea = JXBRshowBrasil;
                         Image = TaxDetail;
                         ToolTip = 'Tax details setup', Comment = 'ESP="Configuracion de detalles de impuestos"';
                     }
@@ -52,7 +52,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                     {
                         Caption = 'Fiscal type', Comment = 'ESP="Tipo fiscal"';
                         RunObject = page JXBRFiscalTypes;
-                        ApplicationArea = All;
+                        ApplicationArea = JXBRshowBrasil;
                         Image = TaxDetail;
                         ToolTip = 'Fiscal types setup', Comment = 'ESP="Configuracion de tipos fiscales"';
                     }
@@ -60,7 +60,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                     {
                         Caption = 'Province', Comment = 'ESP="Provincia"';
                         RunObject = page JXLTProvinces;
-                        ApplicationArea = All;
+                        ApplicationArea = JXBRshowBrasil;
                         Image = TaxDetail;
                         ToolTip = 'Province setup', Comment = 'ESP="Configuracion de Provincias"';
                     }
@@ -74,7 +74,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                     {
                         Caption = 'Withholding taxes', Comment = 'ESP="Impuesto retenciones"';
                         RunObject = page JXLTWithholdingTax;
-                        ApplicationArea = All;
+                        ApplicationArea = JXBRshowBrasil;
                         Image = Setup;
                         ToolTip = 'Withholding taxes setup', Comment = 'ESP="Configuracion de impuesto retenciones"';
                     }
@@ -83,7 +83,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                     {
                         Caption = 'Withholding Tax conditions', Comment = 'ESP="Condicion de impuesto retenciones"';
                         RunObject = page JXLTWithholdTaxCondition;
-                        ApplicationArea = All;
+                        ApplicationArea = JXBRshowBrasil;
                         Image = TaxSetup;
                         ToolTip = 'Withholding Tax conditions setup', Comment = 'ESP="Configuracion de condicion de impuesto retenciones"';
                     }
@@ -92,7 +92,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                     {
                         Caption = 'Witholding detail', Comment = 'ESP="Detalle retencion"';
                         RunObject = page JXLTWithholdDetailEntry;
-                        ApplicationArea = All;
+                        ApplicationArea = JXBRshowBrasil;
                         Image = TaxDetail;
                         ToolTip = 'Witholding detail setup', Comment = 'ESP="Configuracion detalle retencion"';
                     }
@@ -101,7 +101,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                     {
                         Caption = 'Witholding scale', Comment = 'ESP="Escala retencion"';
                         RunObject = page JXLTWithholdScale;
-                        ApplicationArea = All;
+                        ApplicationArea = JXBRshowBrasil;
                         Image = GeneralPostingSetup;
                         ToolTip = 'Witholding scale setup', Comment = 'ESP="Configuracion escala retencion"';
                     }
@@ -110,7 +110,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                     {
                         Caption = 'Withholding area list', Comment = 'ESP="Lista de area de retencion"';
                         RunObject = page JXLTWithholdAreaList;
-                        ApplicationArea = All;
+                        ApplicationArea = JXBRshowBrasil;
                         Image = SetupList;
                         ToolTip = 'Withholding area list', Comment = 'ESP="Lista de area de retencion"';
                     }
@@ -124,7 +124,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                     {
                         Caption = 'Payment Journal (Vendors)', Comment = 'ESP="Diario de pago (Proveedores)"';
                         RunObject = page "Payment Journal";
-                        ApplicationArea = All;
+                        ApplicationArea = JXBRshowBrasil;
                         Image = PaymentJournal;
                         ToolTip = 'Payment Journal (Vendors)', Comment = 'ESP="Diario de pago (Proveedores)"';
                     }
@@ -133,7 +133,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                     {
                         Caption = 'Payment Journal (Customers)', Comment = 'ESP="Diario de pago (Clientes)"';
                         RunObject = page "Cash Receipt Journal";
-                        ApplicationArea = All;
+                        ApplicationArea = JXBRshowBrasil;
                         Image = CashReceiptJournal;
                         ToolTip = 'Payment Journal (Customers)', Comment = 'ESP="Diario de pago (Clientes)"';
                     }
@@ -142,7 +142,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                     {
                         Caption = 'History payment orders', Comment = 'ESP="Historico ordenes de pago"';
                         RunObject = page JXLTHistoryPaymOrderList;
-                        ApplicationArea = All;
+                        ApplicationArea = JXBRshowBrasil;
                         Image = PaymentHistory;
                         ToolTip = 'History payment orders', Comment = 'ESP="Historico ordenes de pago"';
                     }
@@ -151,7 +151,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                     {
                         Caption = 'History receipts', Comment = 'ESP="Historico de recibos"';
                         RunObject = page JXLTPostedReceiptsList;
-                        ApplicationArea = All;
+                        ApplicationArea = JXBRshowBrasil;
                         Image = PostedReceipts;
                         ToolTip = 'History receipts', Comment = 'ESP="Historico de recibos"';
                     }
@@ -160,7 +160,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                     {
                         Caption = 'Third party check', Comment = 'ESP="Cheques de terceros"';
                         RunObject = page JXLTThirdPartyCheck;
-                        ApplicationArea = All;
+                        ApplicationArea = JXBRshowBrasil;
                         Image = CheckList;
                         ToolTip = 'Third party check', Comment = 'ESP="Cheques de terceros"';
                     }
@@ -169,7 +169,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                     {
                         Caption = 'Treasury setup', Comment = 'ESP="Conf. tesoreria"';
                         RunObject = page JXLTPaymentSetup;
-                        ApplicationArea = All;
+                        ApplicationArea = JXBRshowBrasil;
                         Image = PostedReceipts;
                         ToolTip = 'Treasury setup', Comment = 'ESP="Configuracion tesoreria"';
                     }
@@ -187,7 +187,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                         {
                             Caption = 'Setup Electronic invoice', Comment = 'ESP="Conf. Factura electronica"';
                             RunObject = page JXLTFEConfiguration;
-                            ApplicationArea = All;
+                            ApplicationArea = JXBRshowBrasil;
                             Image = Setup;
                             ToolTip = 'Electronic Doc. Setup', Comment = 'ESP="Configuracion factura electronica"';
                         }*/
@@ -196,7 +196,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                         {
                             Caption = 'Point of sale', Comment = 'ESP="Puntos de venta"';
                             RunObject = page JXLTPointOfSale;
-                            ApplicationArea = All;
+                            ApplicationArea = JXBRshowBrasil;
                             Image = Setup;
                             ToolTip = 'Point of sale setup', Comment = 'ESP="Configuracion de puntos de venta"';
                         }
@@ -205,7 +205,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                         {
                             Caption = 'Document types', Comment = 'ESP="Tipos de documento"';
                             RunObject = page JXLTFEDocumentTypes;
-                            ApplicationArea = All;
+                            ApplicationArea = JXBRshowBrasil;
                             Image = Setup;
                             ToolTip = 'Document types setup', Comment = 'ESP="Configuracion tipos de documento"';
                         }
@@ -214,7 +214,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                         {
                             Caption = 'Customer document types', Comment = 'ESP="Tipos de documento clientes"';
                             RunObject = page JXLTFECustDocumentTypes;
-                            ApplicationArea = All;
+                            ApplicationArea = JXBRshowBrasil;
                             Image = Setup;
                             ToolTip = 'Customer document types setup', Comment = 'ESP="Configuracion tipos de documento clientes"';
                         }
@@ -223,7 +223,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                         {
                             Caption = 'Document vat types', Comment = 'ESP="Tipos de documento impuestos"';
                             RunObject = page JXLTFEVATDocumentTypes;
-                            ApplicationArea = All;
+                            ApplicationArea = JXBRshowBrasil;
                             Image = Setup;
                             ToolTip = 'Document vat types setup', Comment = 'ESP="Configuracion tipos de documento impuestos"';
                         }
@@ -232,7 +232,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                         {
                             Caption = 'Document series', Comment = 'ESP="Series de documentos"';
                             RunObject = page JXLTSeriesFEConfiguration;
-                            ApplicationArea = All;
+                            ApplicationArea = JXBRshowBrasil;
                             Image = Setup;
                             ToolTip = 'Document series setup', Comment = 'ESP="Configuracion series de documentos"';
                         }
@@ -246,7 +246,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                         {
                             Caption = 'Localization reports', Comment = 'ESP="Reportes localización"';
                             RunObject = page JXBRExecuteReports;
-                            ApplicationArea = All;
+                            ApplicationArea = JXBRshowBrasil;
                             Image = Report;
                             ToolTip = 'Localization reports', Comment = 'ESP="Reportes localización"';
                         }
@@ -255,7 +255,7 @@ pageextension 83502 JXBRBusinessManagerRC extends "Business Manager Role Center"
                         {
                             Caption = 'Document correction', Comment = 'ESP="Corrector de documentos"';
                             RunObject = page JXLTDocumentsCorrection;
-                            ApplicationArea = All;
+                            ApplicationArea = JXBRshowBrasil;
                             Image = AdjustEntries;
                             ToolTip = 'Document correction', Comment = 'ESP="Corrector de documentos"';
                         }
