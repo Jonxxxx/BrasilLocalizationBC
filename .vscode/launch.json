@@ -7,10 +7,10 @@
             "request": "launch",
             "type": "al",
             "environmentType": "Sandbox",
-            //"environmentName": "DevLocLATAM",
-            //"tenant": "67b3258e-324b-43ec-a4d5-5e63000db68e",//JX DevLocLATAM
-            "environmentName": "Dev",
-            "tenant": "ef9a3158-16fd-4dee-993b-2097919917c3",//Kilimo
+            "environmentName": "DevLocLATAM",
+            "tenant": "67b3258e-324b-43ec-a4d5-5e63000db68e",//JX DevLocLATAM
+            //"environmentName": "Dev",
+            //"tenant": "ef9a3158-16fd-4dee-993b-2097919917c3",//Kilimo
             "startupObjectId": 22,
             "startupObjectType": "Page",
             "breakOnError": true,

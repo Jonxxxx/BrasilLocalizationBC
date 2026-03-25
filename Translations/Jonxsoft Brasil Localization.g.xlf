@@ -278,6 +278,66 @@
           <note from="Developer" annotates="general" priority="2">ESP = Descripcion</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page JXBRTaxJurisdictions - Control Unrealized VAT Type - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Report 2394454144 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purch VAT book</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Libro IVA compras</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report JXBRPurchVatBook - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2394454144 - Control 1826403361 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dates</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Fechas</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report JXBRPurchVatBook - Control Dates - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2394454144 - Control 837247550 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>From</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Desde</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report JXBRPurchVatBook - Control FromDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2394454144 - Control 837247550 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>From</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Desde</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report JXBRPurchVatBook - Control FromDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2394454144 - Control 4137594593 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>To</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Hasta</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report JXBRPurchVatBook - Control ToDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2394454144 - Control 4137594593 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>To</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Hasta</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report JXBRPurchVatBook - Control ToDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2099276628 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales vat book</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Libro IVA ventas</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report JXBRSalesVatBook - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2099276628 - Control 1826403361 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dates</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Fechas</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report JXBRSalesVatBook - Control Dates - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2099276628 - Control 837247550 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>From</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Desde</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report JXBRSalesVatBook - Control FromDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2099276628 - Control 837247550 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>From</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Desde</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report JXBRSalesVatBook - Control FromDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2099276628 - Control 4137594593 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>To</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Hasta</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report JXBRSalesVatBook - Control ToDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2099276628 - Control 4137594593 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>To</source>
+          <note from="Developer" annotates="general" priority="2">ESP=Hasta</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report JXBRSalesVatBook - Control ToDate - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1000464162 - Action 491968171 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2458191494">
           <source>Brasil</source>
           <note from="Developer" annotates="general" priority="2">ESP="Brasil"</note>
